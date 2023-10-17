@@ -2,8 +2,10 @@
 *.bak
 
 # Ignore the 'work' folder and its contents
-./work/
-
+work/
+incremental_db/
+db/
+output_files/
 # Ignore files with .mti, .mpf, and .wlf extensions
 *.mti
 *.mpf
@@ -13,3 +15,8 @@ _info
 *.qpg
 *.qtl
 _vmake
+*.qpf
+*.qsf
+*.qws
+
+

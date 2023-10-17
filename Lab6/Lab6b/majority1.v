@@ -16,7 +16,7 @@ and gate2 (and2, a, c);
 and gate3 (and3, b, c);
 
 // Define two 3-input OR gates
-or or_gate1 (or1, and1, and2, and3);
-or or_gate2 (y, a, b, c);
+or or_gate1 (or1, and1, and2);
+or or_gate2 (y, or1, and3);
 
 endmodule

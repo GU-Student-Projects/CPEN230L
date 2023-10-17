@@ -1,0 +1,15 @@
+# Ignore .bak files
+*.bak
+
+# Ignore the 'work' folder and its contents
+./work/
+
+# Ignore files with .mti, .mpf, and .wlf extensions
+*.mti
+*.mpf
+*.wlf
+_info
+*.qdb
+*.qpg
+*.qtl
+_vmake

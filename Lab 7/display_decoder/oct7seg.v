@@ -6,11 +6,13 @@ module oct7seg (
   output [6:0] disp_o);  // 7-bit output to a 7-segment display
 
   // 7-segment display segment # 6543210
-  assign disp_o = (c_i == 3'd0) ? 7'b1111110 :
-                  (c_i == 3'd1) ? 7'b0110000 :
-                  (c_i == 3'd2) ? 7'b1101101 :
-                  (c_i == 3'd3) ? 7'b1111001 :
-                  (c_i == 3'd4) ? 7'b0110011 :
-                  (c_i == 3'd5) ? 7'b1011011 :
-                  (c_i == 3'd6) ? 7'b1011111;
+  assign disp_o = (c_i == 3'd0) ? 7'b1000000 :
+                  (c_i == 3'd1) ? 7'b1111001 :
+                  (c_i == 3'd2) ? 7'b0100100 :
+                  (c_i == 3'd3) ? 7'b0110000 :
+                  (c_i == 3'd4) ? 7'b0011001 :
+                  (c_i == 3'd5) ? 7'b0010010 :
+                  (c_i == 3'd6) ? 7'b0000010 :
+						(c_i == 3'd7) ? 7'b1111000 :
+						7'bxxxxxxx;
 endmodule

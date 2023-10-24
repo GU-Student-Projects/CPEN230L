@@ -1,5 +1,5 @@
 // CPEN230 lab 7 part 2, octal to 7-segment decoder
-// Gabe DiMartino, 10/23/23
+// Gabe DiMartino, 10/23/2023
 
 module oct7seg (
   input  [2:0] c_i,      // 3-bit octal digit input
@@ -12,5 +12,8 @@ module oct7seg (
                   (c_i == 3'd3) ? 7'b0110000 :
                   (c_i == 3'd4) ? 7'b0011001 :
                   (c_i == 3'd5) ? 7'b0010010 :
-                  (c_i == 3'd6) ? 7'b0000010;
+                  (c_i == 3'd6) ? 7'b0000010 :
+		              (c_i == 3'd7) ? 7'b1111000 :
+		              7'bxxxxxxx;
 endmodule
+

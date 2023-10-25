@@ -13,7 +13,7 @@ module oct7seg (
                   (c_i == 3'd4) ? 7'b0011001 :
                   (c_i == 3'd5) ? 7'b0010010 :
                   (c_i == 3'd6) ? 7'b0000010 :
-		              (c_i == 3'd7) ? 7'b1111000 :
-		              7'bxxxxxxx;
+		  (c_i == 3'd7) ? 7'b1111000 :
+		  7'bxxxxxxx;
 endmodule
 

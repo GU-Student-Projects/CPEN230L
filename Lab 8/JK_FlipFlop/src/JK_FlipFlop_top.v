@@ -1,4 +1,4 @@
-// CPEN 230L lab 9 part 2, JK flip flop test on DE2-115 board
+// CPEN 230L lab 8 part 2, JK flip flop test on DE2-115 board
 // Gabe DiMartino 10/30/2023
 
 module JK_FlipFlop_top (

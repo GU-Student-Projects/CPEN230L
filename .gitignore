@@ -6,6 +6,7 @@ work/
 incremental_db/
 db/
 output_files/
+simulation/
 # Ignore files with .mti, .mpf, and .wlf extensions
 *.mti
 *.mpf

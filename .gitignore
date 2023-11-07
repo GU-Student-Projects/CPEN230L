@@ -1,5 +1,12 @@
 # Ignore .bak files
 *.bak
+*.bat
+*.out
+*.gtkw
+*.DS_Store
+
+files.txt
+vvp_out.txt
 
 # Ignore the 'work' folder and its contents
 work/

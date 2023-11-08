@@ -1,28 +1,37 @@
+// CPEN 230L timerModN test bench
+// Rick Nungester 3/26/16
+
+`timescale 1ms / 100ns  // 1 sim tick = 1 ms, times to 100 ns resolution
+
 module timerModN_tb;
+                        // DUT inputs and outputs
+  reg        clk = 1;   // clock input to DUT
+  reg        nRst;      // active low reset input to DUT
+  wire [3:0] count;     // DUT count output
 
-    reg clk = 0;
-    reg rst = 0;
-    reg key0 = 0;
+  // We want 5 clock periods to correspond with 1 second, or 1/2 clock
+  // period to correspond with 1/10 seconds = 100 ms = 100 simulation
+  // time ticks.
+  always
+    #100 clk = ~clk;   // clock + edges at 200, 400, 600... ms
 
-    [6:0] hex0;
+  initial begin
+    $dumpfile("a.vcd");         // for GTKWave
+    $dumpvars(0, timerModN_tb); // for GTKWave
+    $display(" time  count");    // table header
+    $monitor("%5d %6d",         // table formatting
+      $time, count);            // table signals
 
-    timerModN #(
-        .STAGE0_COUNT(4)
-    ) u_timerModN (
-        .clk(clk),
-        .rst(rst),
-        .hex0(hex0)
-    );
+                         // Test Procedure
+           nRst = 1'b0;  // @t=0, reset
+    #100   nRst = 1'b1;  // @t=100ms, 1st falling clock edge, count
+    #12400 nRst = 1'b0;  // @t=12.5s, mid "2", stop counting
+    #1500  $finish;      // @t=14s, finish
+  end
 
-    always begin
-        #5 clk = ~clk;
-    end
-    always begin
-        #10 rst = 0;
-        #10 rst = 1;
-    end
-    always begin
-        #40 key0 = 1;
-        #40 key0 = 0;
-    end
+  timerModN #(.STAGE0_COUNT(4)) DUT (  // 5 clocks per count update
+    .clk    (clk),
+    .rst   (nRst),
+    .hex0_o  (count) );
+
 endmodule

@@ -1,7 +1,7 @@
 // CPEN 230L lab 10, cascadeCounter on the DE2-115 board
 // Rick Nungester 3/20/16
 
-module timerModN_top (
+module cascadeCounter_top (
    input         CLOCK_50, // Clock for debounce circuit
    input  [1:0]  KEY,      // counter clock, reset
    output [6:0]  HEX0,     // stage 0 count
@@ -22,7 +22,7 @@ module timerModN_top (
     .noisy_i (KEY[0]),           // noisy reset key
     .clean_o (clean_nReset_w) ); // clean reset key
 
-  timerModN u_timerModN (
+  cascadeCounter cc (
     .clk_i    (~clean_clock_w),   // key press: clk_i posedge
     .nRst_i   (clean_nReset_w),   // key press: nRst_i = 0 (reset)
     .count0_o (count0_w),

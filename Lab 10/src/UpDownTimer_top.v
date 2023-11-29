@@ -35,9 +35,9 @@ module UpDownTimer_top (
 
     upDownTimer #(
         .STAGE0_BITS(26),
-        .STAGE0_COUNT((50000000)/(2**3)),
+        .STAGE0_COUNT((50000000)/(10**3)),
         .STAGE1_BITS(4),
-        .STAGE1_COUNT(1) // Change mod
+        .STAGE1_COUNT(9) // Change mod
     ) u_upDownTimer1 (
         .clk    (CLOCK_50),
         .rst    (clean_nReset_w),

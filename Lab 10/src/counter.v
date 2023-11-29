@@ -13,12 +13,15 @@ module counter
 
   always @(posedge clk_i or negedge nRst_i) begin
     if (~nRst_i) begin
-      if (load_i) 
-        count_r <= load_i; // set to Load on reset and load
+      if (load_i)
+			if (load_i > cntr_tc_p)
+				count_r <= cntr_tc_p;
+			else
+				count_r <= load_i; // set to Load on reset and load
       else if (up_i)
         count_r <= 0; // set to 0 on reset and up
       else
-        count_r <= cntr_tc_p; // set to TC on reset and not up
+        count_r <= 0; // set to TC on reset and not up
     end
     else if (enable_i) begin
       if (count_r == cntr_tc_p && up_i)

@@ -21,7 +21,7 @@ module seq4FSM_top (
     .clean_o (KEY0_clean_w) );
 
   seq4FSM fsm (
-    .Clock      (/* Provide the clock signal for seq4FSM here */),
+    .Clock      (KEY0_clean_w),
     .nReset     (SW[0]),          // active low synchronous reset
     .w          (SW[1]),          // main FSM input
     .z          (LEDG0),

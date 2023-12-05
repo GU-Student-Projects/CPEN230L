@@ -11,8 +11,8 @@ assign disp_o = (code_i == 4'd0) ? 7'b0001000 : // A
                 (code_i == 4'd3) ? 7'b0100001 : // d
                 (code_i == 4'd4) ? 7'b0000110 : // E
                 (code_i == 4'd5) ? 7'b0001110 : // F
-                (code_i == 4'd6) ? 7'b1001100 : // G 
-                (code_i == 4'd7) ? 7'b0011000 : // H
-                (code_i == 4'd8) ? 7'b0111000 : // I
+                (code_i == 4'd6) ? 7'b1000010 : // G 
+                (code_i == 4'd7) ? 7'b0001001 : // H
+                (code_i == 4'd8) ? 7'b1111001 : // I
                                      7'bxxxxxxx;
 endmodule

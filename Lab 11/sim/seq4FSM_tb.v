@@ -42,12 +42,13 @@ module seq4FSM_tb;
     #1.5 $finish;          // @t=20, finish
   end
 
-  seq4FSM fsm (            // instantiate the DUT
-    .Clock      (//),
-    .nReset     (//),
-    .w          (//),
-    .z          (//),
-    .curr_state (//),
-    .next_state (//) );
+  seq4FSM fsm (
+    .Clock      (Clock_r),
+    .nReset     (nReset_r),
+    .w          (w_r),
+    .z          (z_w),
+    .curr_state (curr_state_w),
+    .next_state (next_state_w)
+  );
 
 endmodule
